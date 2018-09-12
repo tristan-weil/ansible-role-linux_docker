@@ -1,0 +1,6 @@
+---
+
+docker_dirpath: /var/lib/docker
+docker_dirpath_force: False
+
+docker_daemon_enabled: True
