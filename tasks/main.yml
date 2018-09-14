@@ -1,31 +1,9 @@
 ---
 
-- name: create the docker directory
-  file:
-    path: "{{ docker_dirpath }}"
-    owner: root
-    group: root
-    mode: "0711"
-    state: directory
-
-- name: relink the docker directory if needed
-  file:
-    src: "{{ docker_dirpath }}"
-    dest: /var/lib/docker
-    state: link
-    force: "{{ docker_dirpath_force }}"
-  when: docker_dirpath != '/var/lib/docker'
+- import_tasks: config.yml
 
 - include_tasks: "pkg_config_{{ ansible_distribution }}.yml"
 
-- import_role:
-    name: t18s.fr_pkg
-  vars:
-    pkg_list:
-    - docker-ce
+- import_tasks: pkg.yml
 
-- name: start docker service
-  service:
-    name: docker
-    enabled: "{{ docker_daemon_enabled }}"
-    state: started
+- import_tasks: service.yml
