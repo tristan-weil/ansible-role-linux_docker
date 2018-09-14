@@ -25,7 +25,7 @@ Set this variable to disable Docker at boot.
 
 ## Dependencies
 
-- t18s.fr_pkg_config
+- t18s.fr_*_pkg_config
 - t18s.fr_pkg
 
 ## Example Playbook
