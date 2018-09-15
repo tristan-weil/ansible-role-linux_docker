@@ -6,6 +6,10 @@ An Ansible Role that installs `Docker` on Linux.
 
 Available variables are listed below, along with default values (see `defaults/main.yml`):
 
+    docker_version: 18.06.1~ce~3-0~debian       # the version of docker to install
+    
+The version of `docker` to install.
+
     docker_dirpath: /var/lib/docker             # the directory containing all Docker's files
     
 The path of the `Docker`'s files.
