@@ -4,5 +4,5 @@
     name: t18s.fr_pkg
   vars:
     pkg_list:
-    - name: docker-ce
-      version: "{{ docker_version }}"
+      - name: docker-ce
+        version: "{{ docker_version }}"
