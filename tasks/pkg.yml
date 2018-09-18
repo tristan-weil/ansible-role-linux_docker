@@ -1,8 +1,25 @@
 ---
 
+- name: get package facts
+  package_facts:
+    manager: "auto"
+
+- name: get the current docker-ce version
+  set_fact:
+    __docker_current_pkg_result: "{{ ansible_facts.packages['docker-ce'][0]['version'] }}"
+  when: ansible_facts.packages['docker-ce'] is defined
+
 - import_role:
     name: t18s.fr_pkg
   vars:
     pkg_list:
       - name: docker-ce
         version: "{{ docker_version }}"
+
+- name: trigger docker containers restart
+  debug:
+    msg: "docker-ce: {{ __docker_current_pkg_result }} -> {{ docker_version }}"
+  changed_when: True
+  when: __docker_current_pkg_result != docker_version
+  notify:
+    - docker restart

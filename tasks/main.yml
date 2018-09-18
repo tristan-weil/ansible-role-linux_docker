@@ -7,3 +7,5 @@
 - import_tasks: pkg.yml
 
 - import_tasks: service.yml
+
+- meta: flush_handlers
