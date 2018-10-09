@@ -2,7 +2,7 @@
 
 - name: create the docker directory
   file:
-    path: "{{ docker_dirpath }}"
+    path: "{{ docker_dir }}"
     owner: root
     group: root
     mode: "0711"
@@ -10,8 +10,8 @@
 
 - name: relink the docker directory if needed
   file:
-    src: "{{ docker_dirpath }}"
+    src: "{{ docker_dir }}"
     dest: /var/lib/docker
     state: link
-    force: "{{ docker_dirpath_force }}"
-  when: docker_dirpath != '/var/lib/docker'
+    force: "{{ docker_force_dir }}"
+  when: docker_dir != '/var/lib/docker'

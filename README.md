@@ -10,13 +10,13 @@ Available variables are listed below, along with default values (see `defaults/m
     
 The version of `docker` to install.
 
-    docker_dirpath: /var/lib/docker             # the directory containing all Docker's files
+    docker_dir: /var/lib/docker             # the directory containing all Docker's files
     
 The path of the `Docker`'s files.
 If the value is not `/var/lib/docker`, a symlink will be created to point to the new directory path.
 We do not want to modify the behaviour of `Docker`.
     
-    docker_dirpath_force: False                 # True|False
+    docker_force_dir: False                 # True|False
     
 Setting this variable to `True` will destroy everything in the `Docker`'s directory:
 - if there is an existing installation of `Docker`
@@ -37,7 +37,7 @@ Set this variable to disable Docker at boot.
     - hosts: webservers
       roles:
         - role: t18s.fr_Linux_docker
-          docker_dirpath: /data/docker
+          docker_dir: /data/docker
 
 ## Todo
 
