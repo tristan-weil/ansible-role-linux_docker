@@ -6,8 +6,8 @@
 
 - name: get the current docker-ce version
   set_fact:
-    __docker_current_pkg_result: "{{ ansible_facts.packages['docker-ce'][0]['version'] }}"
-  when: ansible_facts.packages['docker-ce'] is defined
+    __docker_current_pkg_result: "{{ ansible_facts['packages']['docker-ce'][0]['version'] }}"
+  when: ansible_facts['packages']['docker-ce'] is defined
 
 - import_role:
     name: t18s.fr_pkg

@@ -2,7 +2,7 @@
 
 - import_tasks: config.yml
 
-- include_tasks: "pkg_config_{{ ansible_distribution }}.yml"
+- include_tasks: "pkg_config_{{ ansible_facts['distribution'] }}.yml"
 
 - import_tasks: pkg.yml
 

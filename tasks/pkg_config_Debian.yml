@@ -6,7 +6,7 @@
     apt_config_sources_list_path: /etc/apt/sources.list.d/docker.sources
     apt_config_sources_list_repos:
       - uri: https://download.docker.com/linux/debian/
-        suites: "{{ ansible_distribution_release }}"
+        suites: "{{ ansible_facts['distribution_release'] }}"
         components: stable
     apt_config_key_urls:
       - url: https://download.docker.com/linux/debian/gpg
