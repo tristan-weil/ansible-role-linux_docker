@@ -13,5 +13,5 @@
     src: "{{ docker_dir }}"
     dest: /var/lib/docker
     state: link
-    force: "{{ docker_force_dir }}"
+    force: "{{ docker_force_dir | bool }}"
   when: docker_dir != '/var/lib/docker'
