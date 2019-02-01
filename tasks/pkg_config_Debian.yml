@@ -1,6 +1,6 @@
 ---
 
-- import_role:
+- include_role:
     name: t18s.fr_Debian_pkg_config
   vars:
     apt_config_sources_list_path: /etc/apt/sources.list.d/docker.sources
