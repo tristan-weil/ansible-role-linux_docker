@@ -3,6 +3,6 @@
 docker_dir: /var/lib/docker
 docker_force_dir: False
 
-docker_version: 18.06.1~ce~3-0~debian
+# docker_version:
 
 docker_daemon_enabled: True

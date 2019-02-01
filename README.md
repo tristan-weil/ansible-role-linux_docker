@@ -6,7 +6,7 @@ An Ansible Role that installs `Docker` on Linux.
 
 Available variables are listed below, along with default values (see `defaults/main.yml`):
 
-    docker_version: 18.06.1~ce~3-0~debian       # the version of docker to install
+    docker_version: [optional]              # the version of docker to install
     
 The version of `docker` to install.
 
@@ -23,7 +23,7 @@ Setting this variable to `True` will destroy everything in the `Docker`'s direct
 - if the directory does not remain the same
     
     
-    docker_daemon_enabled: True                 # True|False
+    docker_daemon_enabled: True             # True|False
     
 Set this variable to disable Docker at boot.
 
