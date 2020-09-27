@@ -1,6 +1,6 @@
 ---
 
-- name: docker restart
+- name: 'docker_restart_handler'
   service:
-    name: docker
-    state: restarted
+    name: 'docker'
+    state: 'restarted'

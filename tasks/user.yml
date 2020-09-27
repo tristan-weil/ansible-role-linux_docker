@@ -1,0 +1,8 @@
+---
+
+- name: 'add users to group docker'
+  user:
+    name: "{{ item }}"
+    groups: 'docker'
+    append: True
+  loop: "{{ docker_users_to_group }}"

@@ -1,13 +1,9 @@
 ---
 
-- import_tasks: config.yml
+- include_tasks: "pkg_{{ ansible_facts['os_family'] }}.yml"
 
-- include_tasks: "pkg_config_{{ ansible_facts['distribution'] }}.yml"
+- include_tasks: 'user.yml'
 
-- import_tasks: pkg.yml
+- include_tasks: 'service.yml'
 
-- import_tasks: service.yml
-
-- import_tasks: fw.yml
-
-- meta: flush_handlers
+- meta: 'flush_handlers'
